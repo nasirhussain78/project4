@@ -1,3 +1,5 @@
+//✅......REDIS CONECTION..........🟢
+
 const redis = require('redis');
 const { promisify } = require('util');
 require('dotenv').config();
@@ -18,12 +20,12 @@ redisClient.on('connect', async () => {
     console.log("Radis is connected !");
 });
 
-// connection setup of redis
-
 const SET_ASYNC = promisify(redisClient.SET).bind(redisClient);
 const GET_ASYNC = promisify(redisClient.GET).bind(redisClient);
 //const MSET_ASYNC = promisify(redisClient.MSET).bind(redisClient);
 
+
+//............EXPORTING ..........⤴⤴⤴⤴
 module.exports = {
     SET_ASYNC,
     GET_ASYNC
